@@ -10,8 +10,8 @@ public class TTD {
     public static Port p2 = new Port("Benghazy", 80, 0, null, Product.Fuel);
     public static Port p3 = new Port("Alexandria", 150, 0 , null, Product.Food);
     public static Port p4 = new Port("Sevastopol", 120, 1500, Product.Food, null);
-    public static Port p5 = new Port("Novorossiysk", 200, 1400, Product.Clothing, null);
-    public static Port p6 = new Port("Sochi", 90, 1100 , Product.Fuel, null);
+    public static Port p5 = new Port("Novorossiysk", 200, 0, Product.Clothing, null);
+    public static Port p6 = new Port("Sochi", 90, 0 , Product.Fuel, null);
 
     public static Strait Bosphorus = new Strait(27, 15, 2);
 
@@ -24,7 +24,7 @@ public class TTD {
     public static Ship ship2 = new Ship("Ship 2", 50, 210, cb);
     public static Ship ship3 = new Ship("Very Fast Ship", 100, 50, cb);
     public static Ship ship4 = new Ship("Ship 3", 50, 200, cb);
-    public static Ship ship5 = new Ship("Big Load Ship ", 25, 900, cb);
+    public static Ship ship5 = new Ship("Big Load Ship ", 50, 900, cb);
 
     public static void main(String[] args) {
         TTD tt = new TTD();

@@ -49,22 +49,20 @@ public class Ship implements Runnable {
         System.out.println(this.name + " спит в порту Istambul");
         while((TTD.p4.getPortCapacity()!=0) || (TTD.p5.getPortCapacity()!=0) || (TTD.p6.getPortCapacity()!=0)) {
             TTD.BlackSea.go(this);
-            while((!TTD.p4.isFree()) && (!TTD.p5.isFree()) && (!TTD.p6.isFree())) {
-            }
-            if((TTD.p4.isFree()) && (TTD.p4.getPortCapacity()!=0)) {
-                TTD.p4.go(this);
-                Path mp = new Path(makePath(TTD.p4.load));
-                mp.go(this);
-            }
-            else if((TTD.p5.isFree())  && (TTD.p5.getPortCapacity()!=0)) {
-                TTD.p5.go(this);
-                Path mp = new Path(makePath(TTD.p5.load));
-                mp.go(this);
-            }
-            else if((TTD.p6.isFree()) && (TTD.p6.getPortCapacity()!=0)) {
-                TTD.p6.go(this);
-                Path mp = new Path(makePath(TTD.p6.load));
-                mp.go(this);
+            while((this.getLoad()==0) && ((TTD.p4.getPortCapacity()!=0) || (TTD.p5.getPortCapacity()!=0) || (TTD.p6.getPortCapacity()!=0))) {
+                if ((TTD.p4.isFree()) && (TTD.p4.getPortCapacity() != 0)) {
+                    TTD.p4.go(this);
+                    Path mp = new Path(makePath(TTD.p4.load));
+                    mp.go(this);
+                } else if ((TTD.p5.isFree()) && (TTD.p5.getPortCapacity() != 0)) {
+                    TTD.p5.go(this);
+                    Path mp = new Path(makePath(TTD.p5.load));
+                    mp.go(this);
+                } else if ((TTD.p6.isFree()) && (TTD.p6.getPortCapacity() != 0)) {
+                    TTD.p6.go(this);
+                    Path mp = new Path(makePath(TTD.p6.load));
+                    mp.go(this);
+                }
             }
         }
 
